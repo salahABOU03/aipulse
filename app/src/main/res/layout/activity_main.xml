@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F6FC"
+    android:padding="24dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- Card avec BPM et Graphique -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:layout_marginBottom="24dp"
+        app:cardCornerRadius="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="32dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/bpmText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="En attente..."
+                android:textSize="36sp"
+                android:textColor="#1E88E5"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginBottom="16dp" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/bpmChart"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="8dp" />
+
+            <EditText
+                android:id="@+id/bpmInput"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:enabled="false"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Input Âge stylisé -->
+    <EditText
+        android:id="@+id/ageInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Âge du patient"
+        android:inputType="number"
+        android:background="@drawable/edittext_background"
+        android:padding="16dp"
+        android:textSize="16sp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="sans-serif" />
+
+    <!-- Espacement flexible -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Bouton Prédire -->
+    <Button
+        android:id="@+id/predictButton"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Prédire"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="sans-serif-medium"
+        android:elevation="6dp"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Bouton Historique -->
+    <Button
+        android:id="@+id/historyButton"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Historique"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textColor="#1976D2"
+        android:background="@drawable/outlined_button"
+        android:fontFamily="sans-serif-medium" />
+
+</LinearLayout>
